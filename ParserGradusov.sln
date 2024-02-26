@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserGradusov", "ParserGradusov\ParserGradusov.csproj", "{30125527-0E30-425D-A6C6-86AB04B55345}"
+	ProjectSection(ProjectDependencies) = postProject
+		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6} = {19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{30125527-0E30-425D-A6C6-86AB04B55345}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{30125527-0E30-425D-A6C6-86AB04B55345}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{30125527-0E30-425D-A6C6-86AB04B55345}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{30125527-0E30-425D-A6C6-86AB04B55345}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2A00F30E-6A42-4162-9A6A-038F4B5F9D71}
+	EndGlobalSection
+EndGlobal
