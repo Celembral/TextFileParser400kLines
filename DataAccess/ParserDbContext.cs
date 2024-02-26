@@ -9,11 +9,7 @@ namespace DataAccess
             Database.EnsureCreated();
             //Database.EnsureDeleted();
         }
-
-        //public virtual DbSet<User> Data { get; set; }
-        //public virtual DbSet<GasMeter> GasMeter { get; set; }
         public virtual DbSet<FullLineUser> FullLineUsers { get; set; }
-
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
