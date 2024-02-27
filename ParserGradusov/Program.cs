@@ -4,10 +4,10 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 
 string? line = string.Empty;
-var filepath = StringsStore.GetFilePath();
-var collection = StringsStore.GetMongoDbCollection();
-var dbname = StringsStore.GetMongoDbDatabaseName();
-var mongoConnString = StringsStore.GetMongoDbConnectionString();
+var filepath = StringsStore.filepath;
+var collection = StringsStore.MongoDbCollectionName;
+var dbname = StringsStore.MongoDbDatabaseName;
+var mongoConnString = StringsStore.MongoDbConnectionString;
 
 StreamReader reader = new StreamReader(filepath);
 ParserDbContext dbcontext = new ParserDbContext();
@@ -18,8 +18,14 @@ var db = client.GetDatabase(dbname);
 while ((line = reader.ReadLine()) != null)
 {
     string[] items = line.Split(';');
-    dbcontext.FullLineUsers.Add(SqlModelFill.FillSqlModel(items, items.Length));
+    //sql
+    IModelFill sqlModelFiller = new SqlModelFill();
+    var sqlModel = (FullLineUser)sqlModelFiller.FillModel(items, items.Length);
+    dbcontext.FullLineUsers.Add(sqlModel);
+    //nosql
+    IModelFill noSqlModelFiller = new NoSqlModelFill();
+    var noSqlModel = (BsonDocument)noSqlModelFiller.FillModel(items, items.Length);
     var coll = db.GetCollection<BsonDocument>(collection);
-    coll.InsertOne(NoSqlModelFill.FillNoSqlModel(items, items.Length));
+    coll.InsertOne(noSqlModel);
 }
 dbcontext.SaveChanges();

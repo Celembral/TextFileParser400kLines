@@ -2,9 +2,9 @@
 
 namespace ParserGradusov
 {
-    public class NoSqlModelFill
+    public class NoSqlModelFill : IModelFill
     {
-        public static BsonDocument FillNoSqlModel(string[] items, int i)
+        public object FillModel(string[] items, int i)
         {
             if (i == 5)
             {
