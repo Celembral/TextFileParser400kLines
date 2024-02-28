@@ -4,7 +4,7 @@ using MongoDB.Driver;
 using MongoDB.Bson;
 
 string? line = string.Empty;
-var filepath = StringsStore.filepath;
+var filepath = StringsStore.Filepath;
 var collection = StringsStore.MongoDbCollectionName;
 var dbname = StringsStore.MongoDbDatabaseName;
 var mongoConnString = StringsStore.MongoDbConnectionString;
