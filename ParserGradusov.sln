@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ParserGradusov", "ParserGra
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tests", "Tests\Tests.csproj", "{B1D5D24B-F7CD-48BA-8545-5AAA37BCA69A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{19EAEE61-B55D-4FD8-AB86-5980D5CFBED6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B1D5D24B-F7CD-48BA-8545-5AAA37BCA69A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B1D5D24B-F7CD-48BA-8545-5AAA37BCA69A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B1D5D24B-F7CD-48BA-8545-5AAA37BCA69A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B1D5D24B-F7CD-48BA-8545-5AAA37BCA69A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -8,6 +8,6 @@ namespace ParserGradusov
 {
     public interface IModelFill
     {
-        object FillModel(string[] items, int i);
+        object FillModel(string[] items);
     }
 }
