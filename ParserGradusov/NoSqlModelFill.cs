@@ -13,8 +13,8 @@ namespace ParserGradusov
                 { "Address", items[2] },
                 { "Period", items[3] },
                 { "Sum", items[4] },
-                { "GasId", items.Length == 5 ? "" : items[5] },
-                { "GasMeterReads", items.Length == 5 ? "" : items[6] }
+                { "GasId", items.Length < 7 ? "" : items[5] },
+                { "GasMeterReads", items.Length < 7 ? "" : items[6] }
             };
             return doc;
         }

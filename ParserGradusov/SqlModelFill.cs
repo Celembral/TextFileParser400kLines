@@ -15,8 +15,8 @@ namespace ParserGradusov
                     Adress = items[2], 
                     Period = items[3], 
                     Sum = double.Parse(items[4], new NumberFormatInfo { NumberDecimalSeparator = "." }), 
-                    GasId = items.Length == 5 ? null : items[5],
-                    GasMeterReads = items.Length == 5 ? null : double.Parse(items[6], new NumberFormatInfo { NumberDecimalSeparator = "."})
+                    GasId = items.Length < 7 ? null : items[5],
+                    GasMeterReads = items.Length < 7 ? null : double.Parse(items[6], new NumberFormatInfo { NumberDecimalSeparator = "."})
                 }; 
                 return fullModel;
             }

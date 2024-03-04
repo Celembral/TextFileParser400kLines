@@ -11,8 +11,11 @@ const string mongoConnString = StringsStore.MongoDbConnectionString;
 var reader = new StreamReader(filepath);
 var dbContext = new ParserDbContext();
 var client = new MongoClient(mongoConnString);
+var noSqlModels = new List<BsonDocument>();
+var sqlModels = new List<FullLineUser>();
 
 var db = client.GetDatabase(dbname);
+var coll = db.GetCollection<BsonDocument>(collection);
 
 while (reader.ReadLine() is { } line)
 {
@@ -20,11 +23,13 @@ while (reader.ReadLine() is { } line)
     //sql
     var sqlModelFiller = new SqlModelFill();
     var sqlModel = (FullLineUser)sqlModelFiller.FillModel(items);
-    dbContext.FullLineUsers.Add(sqlModel);
+    sqlModels.Add(sqlModel);
     //nosql
     var noSqlModelFiller = new NoSqlModelFill();
     var noSqlModel = (BsonDocument)noSqlModelFiller.FillModel(items);
-    var coll = db.GetCollection<BsonDocument>(collection);
-    coll.InsertOne(noSqlModel);
+    noSqlModels.Add(noSqlModel);
 }
+
+coll.InsertMany(noSqlModels);
+dbContext.FullLineUsers.AddRange(sqlModels);
 dbContext.SaveChanges();
